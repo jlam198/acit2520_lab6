@@ -17,12 +17,14 @@
     <form>
       <fieldset class="todo-list">
         <legend class="todo-list__title">My Movie List</legend>
+        <% if (locals.movielist) {%>
         <% for (let mov in movielist) {%>
           <label class="todo-list__label">
             <input type="checkbox" name="" id="" />
             <i class="check"></i>
             <span><%= movielist[mov] %></span>
           </label>
+        <% }; %>
         <% }; %>
         <label class="todo-list__label">
           <input type="checkbox" name="" id="" />

@@ -18,7 +18,7 @@ app.get("/", (req, res) => res.render("pages/index"));
 app.get("/myForm", (req, res) => res.render("pages/myForm"));
 
 app.post("/myForm", (req, res) => {
-  let movielist = req.body.movies.split(", ")
+  let movielist = req.body.movies.trim().split(",")
   res.render("pages/index", { movielist : movielist })
 });
 

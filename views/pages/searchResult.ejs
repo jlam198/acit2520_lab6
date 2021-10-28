@@ -10,15 +10,18 @@
 
 <body>
   <!-- Your Code Goes Here -->
+  <% let success = false %>
   <% for (let title in desc) {%>
     <% const inner = desc[title].split(":") %>
     <% if (inner[0].toLowerCase() == movName) {%>
       <h1><%= inner[0] %></h1>
       <p><%= inner[1] %></p>
+      <% success = true %>
       <% break %>
-    <% } else { %>
-      <h1>Sorry, movie name was not found</h1>
     <% }; %>
+  <% }; %>
+  <% if (!success) { %>
+    <h1>Sorry, movie name was not found</h1>
   <% }; %>
   <a href="/">Back to Home</a>
 </body>
